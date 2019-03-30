@@ -27,6 +27,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String url2 =
             "http://web.binus.ac.id/binussquare/LaundryQueue/DropInQueue.aspx/CountQueue";
     private TextView mRemainingQueueTextView;
+    private TextView mCopyrightTextView;
     private RecyclerView mRecyclerView;
     private List<Counter> counters;
     private CounterAdapter mAdapter;
@@ -90,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mRemainingQueueTextView = findViewById(R.id.remaining_queue_text_view);
+        mCopyrightTextView = findViewById(R.id.copyright_text_view);
 
         mSwipeRefreshLayout = findViewById(R.id.swipe);
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -122,6 +125,23 @@ public class MainActivity extends AppCompatActivity {
             doVolley();
             mAdapter.notifyDataSetChanged();
         }
+        updateCopyright();
+    }
+
+    private void updateCopyright() {
+        Calendar calendar = Calendar.getInstance();
+        Integer year = calendar.get(Calendar.YEAR);
+
+        String s = "© Andrew Cen ";
+        if (year == 2019) {
+            s += "2019";
+        } else if (year > 2019) {
+            s += "2019 - " + year.toString();
+        } else {
+            s += "2019";
+        }
+
+        mCopyrightTextView.setText(s);
     }
 
     private void doVolley() {
