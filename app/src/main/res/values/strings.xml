@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">LaundryBS</string>
+    <string name="remaining_queue">Remaining Queue(s):</string>
+</resources>
