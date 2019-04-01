@@ -162,11 +162,14 @@ public class MainActivity extends AppCompatActivity {
                             for (int i = 0; i < array.length(); ++i) {
                                 JSONObject object = array.getJSONObject(i);
                                 String counterName = object.getString("CounterName");
-                                Log.d("volley", counterName);
                                 String name = object.getString("Name");
-                                Log.d("volley", name);
                                 String queueNo = object.getString("QueueNo");
-                                Log.d("volley", queueNo);
+                                if (name.equals("")) {
+                                    name= "Empty";
+                                }
+                                if (queueNo.equals("")) {
+                                    queueNo = "N/A";
+                                }
                                 counters.add(new Counter(counterName, name, queueNo));
                             }
                         } catch (Exception e) {
@@ -188,6 +191,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+        queueRequest.setShouldCache(false);
         requestQueue.add(queueRequest);
     }
 
@@ -220,6 +224,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+        queueNumberRequest.setShouldCache(false);
         requestQueue.add(queueNumberRequest);
     }
 }
