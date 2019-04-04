@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         private TextView mCounterNameTextView;
         private TextView mNameTextView;
         private TextView mQueueNumberTextView;
+        private CardView mCardView;
         private Counter mCounter;
 
         public CounterHolder(View view) {
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             mCounterNameTextView = view.findViewById(R.id.counter_name_text_view);
             mNameTextView = view.findViewById(R.id.name_text_view);
             mQueueNumberTextView = view.findViewById(R.id.queue_number_text_view);
+            mCardView = view.findViewById(R.id.cardview);
         }
 
         public void bindCounter(Counter counter) {
@@ -62,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
             mCounterNameTextView.setText(mCounter.getCounterName());
             mNameTextView.setText(mCounter.getName());
             mQueueNumberTextView.setText(mCounter.getQueueNumber());
+            mCardView.setRadius(75);
+            mCardView.setCardElevation(25);
         }
     }
 
