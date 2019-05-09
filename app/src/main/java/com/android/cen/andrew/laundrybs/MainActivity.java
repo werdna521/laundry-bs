@@ -1,17 +1,15 @@
 package com.android.cen.andrew.laundrybs;
 
 import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -63,10 +61,8 @@ public class MainActivity extends AppCompatActivity {
         public void bindCounter(Counter counter) {
             mCounter = counter;
             mCounterNameTextView.setText(mCounter.getCounterName());
-            mNameTextView.setText(mCounter.getName());
+            mNameTextView.setText(getShortenedName(mCounter.getName()));
             mQueueNumberTextView.setText(mCounter.getQueueNumber());
-            mCardView.setRadius(75);
-            mCardView.setCardElevation(25);
         }
     }
 
@@ -231,5 +227,10 @@ public class MainActivity extends AppCompatActivity {
 
         queueNumberRequest.setShouldCache(false);
         requestQueue.add(queueNumberRequest);
+    }
+
+    private String getShortenedName(String s) {
+        if (s.length() <= 22) return s;
+        return s.substring(0, 22) + "...";
     }
 }
