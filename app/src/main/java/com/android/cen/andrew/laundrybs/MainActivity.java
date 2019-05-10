@@ -1,5 +1,6 @@
 package com.android.cen.andrew.laundrybs;
 
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Handler;
 import androidx.annotation.NonNull;
@@ -24,6 +25,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -46,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private CounterAdapter mAdapter;
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private Toolbar mToolbar;
+    private MaterialButton mLogoutButton;
 
     public class CounterHolder extends RecyclerView.ViewHolder {
         private TextView mCounterNameTextView;
@@ -108,8 +112,34 @@ public class MainActivity extends AppCompatActivity {
                 findViewById(R.id.swipe),
                 new AccelerateDecelerateInterpolator(),
                 getResources().getDrawable(R.drawable.ic_menu_black_24dp),
-                getResources().getDrawable(R.drawable.ic_close_black_24dp)
+                getResources().getDrawable(R.drawable.ic_close_black_24dp),
+                findViewById(R.id.home_button),
+                findViewById(R.id.logout_button)
         ));
+
+        mLogoutButton = findViewById(R.id.logout_button);
+        mLogoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new MaterialAlertDialogBuilder(MainActivity.this,
+                        R.style.Theme_MaterialComponents_Light_Dialog_Alert)
+                        .setTitle("Log Out Now?")
+                        .setMessage("You will not receive notifications about your current laundry if you chose to log out.")
+                        .setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+                        })
+                        .setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
+            }
+        });
 
         mSwipeRefreshLayout = findViewById(R.id.swipe);
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {

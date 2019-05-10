@@ -11,15 +11,6 @@
         android:text="@string/home_button"
         app:rippleColor="@color/colorPrimaryDark"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/settings"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/textColorPrimary"
-        android:text="@string/settings_button"
-        app:rippleColor="@color/colorPrimaryDark"/>
-
     <View
         android:layout_width="100dp"
         android:layout_height="1dp"

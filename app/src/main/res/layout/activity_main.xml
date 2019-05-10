@@ -24,9 +24,11 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            style="@style/Widget.MaterialComponents.Toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light"
+            app:titleTextAppearance="@style/AppTheme.TextAppearance.Toolbar"
             app:navigationIcon="@drawable/ic_menu_black_24dp"/>
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -65,10 +67,10 @@
                 android:layout_height="match_parent"
                 android:layout_below="@id/copyright_text_view"
                 android:layout_marginTop="16dp"
-                android:paddingStart="20dp"
-                android:paddingLeft="20dp"
-                android:paddingEnd="20dp"
-                android:paddingRight="20dp">
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:paddingEnd="10dp"
+                android:paddingRight="10dp">
 
             </androidx.recyclerview.widget.RecyclerView>
         </RelativeLayout>
