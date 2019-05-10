@@ -1,7 +1,9 @@
 package com.android.cen.andrew.laundrybs;
 
+import android.os.Build;
 import android.os.Handler;
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
@@ -42,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private List<Counter> counters;
     private CounterAdapter mAdapter;
     private SwipeRefreshLayout mSwipeRefreshLayout;
+    private Toolbar mToolbar;
 
     public class CounterHolder extends RecyclerView.ViewHolder {
         private TextView mCounterNameTextView;
@@ -95,6 +99,18 @@ public class MainActivity extends AppCompatActivity {
         mRemainingQueueTextView = findViewById(R.id.remaining_queue_text_view);
         mCopyrightTextView = findViewById(R.id.copyright_text_view);
 
+        mToolbar = findViewById(R.id.toolbar);
+        mToolbar.setTitle(R.string.app_name);
+        setSupportActionBar(mToolbar);
+
+        mToolbar.setNavigationOnClickListener(new NavigationIconClickListener(
+                MainActivity.this,
+                findViewById(R.id.swipe),
+                new AccelerateDecelerateInterpolator(),
+                getResources().getDrawable(R.drawable.ic_menu_black_24dp),
+                getResources().getDrawable(R.drawable.ic_close_black_24dp)
+        ));
+
         mSwipeRefreshLayout = findViewById(R.id.swipe);
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -108,6 +124,10 @@ public class MainActivity extends AppCompatActivity {
                 }, 1000);
             }
         });
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            mSwipeRefreshLayout.setBackgroundResource(R.drawable.grid_shape1);
+        }
 
         mRecyclerView = findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));

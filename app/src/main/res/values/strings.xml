@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">LaundryBS</string>
     <string name="remaining_queue">Remaining Queue(s):</string>
+    <string name="home_button">Home</string>
+    <string name="settings_button">Settings</string>
+    <string name="log_out_button">Log Out</string>
 </resources>
