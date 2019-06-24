@@ -1,3 +1,5 @@
-#Landry BINUS SQUARE
+# Laundry BINUS SQUARE
 
-A simple application to track Binus Square's Laundry Queue, for my university assigment.
+An application that shows current queue in <i>Binus Square</i> Laundry
+
+<i>Binus Square laundry website: http://web.binus.ac.id/binussquare/LaundryQueue/DropInQueue.aspx</i>
