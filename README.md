@@ -1,6 +1,6 @@
 # Laundry BS
 
-Laundry BS is an android application written in native Java code. It has the same functionality as its [official website](http://web.binus.ac.id/binussquare/LaundryQueue/DropInQueue.aspx).
+Laundry BS is an android application written in native Java code. It is the mobile version of Binus Square's laundry queue website. It has the same functionality as its [official website](http://web.binus.ac.id/binussquare/LaundryQueue/DropInQueue.aspx).
 
 
 ## Incoming Features
