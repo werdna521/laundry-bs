@@ -13,6 +13,7 @@ class QueueCard extends StatelessWidget {
           QueueNumberIndicator(
             title: 'Your Queue No.',
             content: '10',
+            color: Colors.blue[300],
           ),
           Container(
             height: 48.0,
@@ -24,6 +25,7 @@ class QueueCard extends StatelessWidget {
           QueueNumberIndicator(
             title: 'Current Queue No.',
             content: '2',
+            color: Colors.green[300],
           ),
         ],
       ),
