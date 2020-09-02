@@ -8,6 +8,13 @@ class AntiTheme {
         .copyWith(fontWeight: FontWeight.w300);
   }
 
+  static TextStyle headline2(BuildContext context) {
+    return Theme.of(context)
+        .textTheme
+        .headline2
+        .copyWith(fontWeight: FontWeight.w500);
+  }
+
   static TextStyle headline6(BuildContext context) {
     return Theme.of(context)
         .textTheme

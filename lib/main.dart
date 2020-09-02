@@ -9,6 +9,10 @@ final kTheme = ThemeData(
       fontSize: 36.0,
       color: Colors.grey[850],
     ),
+    headline2: TextStyle(
+      fontSize: 24.0,
+      color: Colors.grey[850],
+    ),
     headline6: TextStyle(
       fontSize: 14.0,
       color: Colors.grey[850],
