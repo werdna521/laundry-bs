@@ -34,8 +34,13 @@ class QueueCard extends StatelessWidget {
 class QueueNumberIndicator extends StatelessWidget {
   final title;
   final content;
+  final color;
 
-  const QueueNumberIndicator({@required this.title, @required this.content});
+  const QueueNumberIndicator({
+    @required this.title,
+    @required this.content,
+    @required this.color,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +55,7 @@ class QueueNumberIndicator extends StatelessWidget {
           ),
           Text(
             content,
-            style: AntiTheme.headline1(context),
+            style: AntiTheme.headline1(context).copyWith(color: color),
           ),
         ],
       ),
