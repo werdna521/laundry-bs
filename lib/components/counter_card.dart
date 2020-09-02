@@ -3,6 +3,11 @@ import 'package:app/text_theme.dart';
 import 'package:app/components/card.dart';
 
 class CounterCard extends StatelessWidget {
+  final counterNumber;
+  final counterQueueNumber;
+
+  CounterCard({this.counterNumber, this.counterQueueNumber});
+
   @override
   Widget build(BuildContext context) {
     return AntiCard(
@@ -11,9 +16,15 @@ class CounterCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text('Counter 1', style: AntiTheme.headline6(context)),
+            Text(
+              'Counter ${counterNumber ?? 0}',
+              style: AntiTheme.headline6(context),
+            ),
             SizedBox(height: 4.0),
-            Text('1', style: AntiTheme.headline1(context)),
+            Text(
+              counterQueueNumber ?? 'n/a',
+              style: AntiTheme.headline1(context),
+            ),
           ],
         ),
       ),
