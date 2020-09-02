@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
                 Container(
                   width: 48.0,
                   height: 48.0,
-                  child: Image.asset('assets/logo.png'),
+                  child: Image.asset('assets/images/logo.png'),
                 ),
                 SizedBox(height: 16.0),
                 QueueCard(),
