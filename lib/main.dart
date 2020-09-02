@@ -21,7 +21,11 @@ class App extends StatelessWidget {
               child: SafeArea(
                 child: Column(
                   children: [
-                    Text('Hi, this is me.'),
+                    Container(
+                      width: 48.0,
+                      height: 48.0,
+                      child: Image.asset('assets/logo.png'),
+                    ),
                   ],
                 ),
               ),
