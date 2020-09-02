@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:app/components/queue_card.dart';
 import 'package:app/components/section.dart';
@@ -56,7 +58,11 @@ class HomeScreen extends StatelessWidget {
 
                               return Padding(
                                 padding: EdgeInsets.symmetric(vertical: 8.0),
-                                child: CounterCard(),
+                                child: CounterCard(
+                                  counterNumber: (index / 2).ceil(),
+                                  counterQueueNumber:
+                                      Random().nextInt(100).toString(),
+                                ),
                               );
                             },
                             itemCount: 11,
