@@ -17,6 +17,10 @@ final kTheme = ThemeData(
       fontSize: 14.0,
       color: Colors.grey[850],
     ),
+    caption: TextStyle(
+      fontSize: 12.0,
+      color: Colors.grey[500],
+    ),
   ),
 );
 
