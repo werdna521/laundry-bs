@@ -1,10 +1,12 @@
 import 'dart:math';
 
+import 'package:app/models/history.dart';
 import 'package:flutter/material.dart';
 import 'package:app/components/queue_card.dart';
 import 'package:app/components/section.dart';
 import 'package:app/components/counter_card.dart';
 import 'package:app/components/history_card.dart';
+import 'package:app/models/history.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -79,9 +81,20 @@ class HomeScreen extends StatelessWidget {
                         padding: EdgeInsets.symmetric(horizontal: 24.0),
                         child: Column(
                           children: [
-                            HistoryCard(),
+                            HistoryCard(
+                              history: History(
+                                'August 12, 2020',
+                                false,
+                              ),
+                            ),
                             SizedBox(height: 8.0),
-                            HistoryCard(),
+                            HistoryCard(
+                              history: History(
+                                'August 1, 2020',
+                                true,
+                                'August 9, 2020',
+                              ),
+                            ),
                           ],
                         ),
                       ),
