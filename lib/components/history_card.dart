@@ -27,9 +27,10 @@ class HistoryCard extends StatelessWidget {
                 history.date,
                 style: AntiTheme.headline6(context),
               ),
-              Text(history.taken
-                  ? 'Taken at ${history.takenDate}'
-                  : 'Not taken'),
+              Text(
+                history.taken ? 'Taken at ${history.takenDate}' : 'Not taken',
+                style: Theme.of(context).textTheme.caption,
+              ),
             ],
           ),
         ],
