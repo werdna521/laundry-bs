@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:app/components/queue_card.dart';
 import 'package:app/components/section.dart';
 import 'package:app/components/counter_card.dart';
+import 'package:app/components/history_card.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -75,10 +76,12 @@ class HomeScreen extends StatelessWidget {
                       buttonText: 'SEE MORE',
                       onPress: () {},
                       child: Container(
+                        padding: EdgeInsets.symmetric(horizontal: 24.0),
                         child: Column(
                           children: [
-                            Text('Hello'),
-                            Text('World'),
+                            HistoryCard(),
+                            SizedBox(height: 8.0),
+                            HistoryCard(),
                           ],
                         ),
                       ),
