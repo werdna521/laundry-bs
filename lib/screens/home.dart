@@ -70,6 +70,19 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
+                    Section(
+                      title: 'History',
+                      buttonText: 'SEE MORE',
+                      onPress: () {},
+                      child: Container(
+                        child: Column(
+                          children: [
+                            Text('Hello'),
+                            Text('World'),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ],
