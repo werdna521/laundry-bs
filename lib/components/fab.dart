@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:app/text_theme.dart';
 
 class FAB extends StatelessWidget {
   final onTap;
@@ -10,12 +11,15 @@ class FAB extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 20.0),
+        padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 24.0),
         decoration: BoxDecoration(
           color: Theme.of(context).primaryColor,
           borderRadius: BorderRadius.circular(24.0),
         ),
-        child: Text('+ ADD QUEUE'),
+        child: Text(
+          '+ ADD QUEUE',
+          style: AntiTheme.headline6(context).copyWith(color: Colors.white),
+        ),
       ),
     );
   }
