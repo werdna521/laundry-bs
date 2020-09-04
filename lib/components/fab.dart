@@ -11,7 +11,10 @@ class FAB extends StatelessWidget {
       onTap: onTap,
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 20.0),
-        color: Theme.of(context).primaryColor,
+        decoration: BoxDecoration(
+          color: Theme.of(context).primaryColor,
+          borderRadius: BorderRadius.circular(24.0),
+        ),
         child: Text('+ ADD QUEUE'),
       ),
     );
