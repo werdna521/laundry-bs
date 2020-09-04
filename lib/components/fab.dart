@@ -8,10 +8,8 @@ class FAB extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 24.0),
+    return Material(
+      child: Ink(
         decoration: BoxDecoration(
           color: Theme.of(context).primaryColor,
           borderRadius: BorderRadius.circular(24.0),
@@ -23,9 +21,17 @@ class FAB extends StatelessWidget {
             ),
           ],
         ),
-        child: Text(
-          '+ ADD QUEUE',
-          style: AntiTheme.headline6(context).copyWith(color: Colors.white),
+        child: InkWell(
+          splashColor: Colors.blue[200],
+          borderRadius: BorderRadius.circular(24.0),
+          onTap: onTap,
+          child: Container(
+            padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 24.0),
+            child: Text(
+              '+ ADD QUEUE',
+              style: AntiTheme.headline6(context).copyWith(color: Colors.white),
+            ),
+          ),
         ),
       ),
     );
