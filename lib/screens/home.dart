@@ -6,7 +6,7 @@ import 'package:app/components/queue_card.dart';
 import 'package:app/components/section.dart';
 import 'package:app/components/counter_card.dart';
 import 'package:app/components/history_card.dart';
-import 'package:app/models/history.dart';
+import 'package:app/components/fab.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -14,9 +14,8 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(toolbarHeight: 0.0),
       backgroundColor: Colors.grey[100],
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.add),
+      floatingActionButton: FAB(
+        onTap: () {},
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: SingleChildScrollView(
