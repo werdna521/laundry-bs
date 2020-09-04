@@ -15,6 +15,13 @@ class FAB extends StatelessWidget {
         decoration: BoxDecoration(
           color: Theme.of(context).primaryColor,
           borderRadius: BorderRadius.circular(24.0),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black12,
+              offset: Offset(2.0, 4.0),
+              blurRadius: 8.0,
+            ),
+          ],
         ),
         child: Text(
           '+ ADD QUEUE',
