@@ -9,6 +9,7 @@ class FAB extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
+      color: Colors.transparent,
       child: Ink(
         decoration: BoxDecoration(
           color: Theme.of(context).primaryColor,
