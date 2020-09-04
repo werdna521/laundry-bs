@@ -14,6 +14,11 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(toolbarHeight: 0.0),
       backgroundColor: Colors.grey[100],
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: SingleChildScrollView(
         child: SafeArea(
           child: Container(
