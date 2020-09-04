@@ -16,7 +16,7 @@ class AntiCard extends StatelessWidget {
             color: Colors.black12,
             offset: Offset(2.0, 4.0),
             blurRadius: 8.0,
-          )
+          ),
         ],
       ),
       padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
