@@ -36,6 +36,7 @@ class HistoryScreen extends StatelessWidget {
                 Section(
                   title: 'History',
                   child: null,
+                  showUpButton: true,
                 ),
                 Expanded(
                   child: ListView.builder(
