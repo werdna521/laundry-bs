@@ -81,8 +81,7 @@ class HomeScreen extends StatelessWidget {
                       Section(
                         title: 'History',
                         buttonText: 'SEE MORE',
-                        onPress: () => Scaffold.of(context).showSnackBar(
-                            SnackBar(content: const Text('See More'))),
+                        onPress: () => Navigator.pushNamed(context, '/history'),
                         child: Container(
                           padding: EdgeInsets.symmetric(horizontal: 24.0),
                           child: Column(
