@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:app/screens/home.dart';
+import 'package:app/screens/history.dart';
 
 final kTheme = ThemeData(
   primaryColor: Colors.blue[300],
@@ -36,6 +37,7 @@ class App extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => HomeScreen(),
+        '/history': (context) => HistoryScreen(),
       },
     );
   }
